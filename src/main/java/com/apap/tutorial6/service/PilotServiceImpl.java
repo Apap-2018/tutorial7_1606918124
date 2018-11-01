@@ -37,4 +37,16 @@ public class PilotServiceImpl implements PilotService {
     public Optional<PilotModel> getPilotDetailById(long id) {
         return pilotDb.findById(id);
     }
+
+	@Override
+	public void deletePilot(PilotModel pilot) {
+		pilotDb.delete(pilot);
+	}
+
+	@Override
+	public void updatePilot(PilotModel pilot) {
+		pilotDb.save(pilot);
+	}
+	
+	
 }

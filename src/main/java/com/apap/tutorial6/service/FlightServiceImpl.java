@@ -1,5 +1,6 @@
 package com.apap.tutorial6.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.apap.tutorial6.model.FlightModel;
@@ -32,4 +33,19 @@ public class FlightServiceImpl implements FlightService {
     public Optional<FlightModel> getFlightDetailByFlightNumber(String flightNumber) {
         return flightDb.findByFlightNumber(flightNumber);
     }
+
+	@Override
+	public FlightModel getFlightDetailById(long flightId) {
+		return flightDb.findById(flightId).get();
+	}
+
+	@Override
+	public List<FlightModel> getAllFlight() {
+		return flightDb.findAll();
+	}
+
+	@Override
+	public void deleteFlight(FlightModel flight) {
+		flightDb.delete(flight);
+	}
 }

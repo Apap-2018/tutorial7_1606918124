@@ -15,4 +15,8 @@ public interface PilotService {
     void deletePilotByLicenseNumber(String licenseNumber);
 
     Optional<PilotModel> getPilotDetailById(long id);
+
+	void deletePilot(PilotModel pilot);
+
+	void updatePilot(PilotModel pilot);
 }
